@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 
 // CODE TO TEST IF DATA-RENDERING WORKS - ORIGINAL CODE BELOW (COMMENTED OUT)
+// Live test app: https://twilight-zone-api-react-test.netlify.app/
 
 const App = () => {
   const [episode, setEpisodes] = useState([]);
@@ -59,6 +60,16 @@ const App = () => {
               alt={item.title}
               title={item.title}
             />
+
+            <p>
+              <a
+                href={item.wikipedia}
+                rel='noopener noreferrer'
+                target='_blank'
+              >
+                Wikipedia
+              </a>
+            </p>
             <div>
               <div style={{ width: '300px' }}>
                 <p style={{ lineHeight: '1.5' }}>
