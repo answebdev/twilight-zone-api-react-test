@@ -6,7 +6,7 @@ import './App.css';
 
 const App = () => {
   const [episode, setEpisodes] = useState([]);
-  const url = `https://the-twilight-zone-api.vercel.app/episodes`;
+  const url = `https://the-twilight-zone-api.herokuapp.com/episodes`;
 
   useEffect(() => {
     fetchEpisodes();
