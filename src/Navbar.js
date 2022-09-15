@@ -6,7 +6,12 @@ import './App.css';
 const Navbar = () => {
   return (
     <>
-      <AppBar style={{ backgroundColor: '#545454' }} position='static'>
+      <AppBar
+        sx={{
+          backgroundColor: '#545454',
+        }}
+        position='static'
+      >
         <Toolbar>
           <span
             style={{
