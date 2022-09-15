@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import TextField from '@mui/material/TextField';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
+import Button from '@mui/material/Button';
 import './App.css';
 
 // CODE TO TEST IF DATA-RENDERING WORKS - ORIGINAL CODE BELOW (COMMENTED OUT)
@@ -103,14 +104,27 @@ const App = () => {
                     alt={item.title}
                     title={item.title}
                   />
-
                   <p>
                     <a
+                      style={{ textDecoration: 'none' }}
                       href={item.wikipedia}
                       rel='noopener noreferrer'
                       target='_blank'
                     >
-                      Wikipedia
+                      <Button
+                        style={{ marginRight: '10px' }}
+                        variant='outlined'
+                      >
+                        Wikipedia
+                      </Button>
+                    </a>
+                    <a
+                      style={{ textDecoration: 'none' }}
+                      href={item.imdb}
+                      rel='noopener noreferrer'
+                      target='_blank'
+                    >
+                      <Button variant='outlined'>IMDb</Button>
                     </a>
                   </p>
                   <div>
