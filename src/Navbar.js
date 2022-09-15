@@ -11,7 +11,7 @@ const Navbar = () => {
           <span
             style={{
               fontWeight: 'bold',
-              letterSpacing: '1.0px',
+              letterSpacing: '1.5px',
               fontSize: '18px',
             }}
           >
