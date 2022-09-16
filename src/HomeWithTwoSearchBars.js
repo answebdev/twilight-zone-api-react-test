@@ -395,11 +395,12 @@ const HomeWithTwoSearchBars = () => {
                     <div style={{ lineHeight: '1.5' }}>
                       <Accordion sx={{ width: '300px', boxShadow: 'none' }}>
                         <AccordionSummary
+                          sx={{ padding: '0' }}
                           expandIcon={<ExpandMoreIcon />}
                           aria-controls='panel1a-content'
                           id='panel1a-header'
                         >
-                          <Typography sx={{ padding: '0' }}>
+                          <Typography>
                             <strong>Details</strong>
                           </Typography>
                         </AccordionSummary>
