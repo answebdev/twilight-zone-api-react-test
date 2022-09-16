@@ -107,7 +107,6 @@ const HomeWithSearch = () => {
             <div key={item.id} style={{ margin: '40px' }}>
               <Card variant='outlined'>
                 <CardContent>
-                  {/* {card} */}
                   <h3 style={{ width: '300px' }}>{item.title}</h3>
                   <div style={{ lineHeight: '2' }}>
                     <p style={{ width: '300px', lineHeight: '1.5' }}>
