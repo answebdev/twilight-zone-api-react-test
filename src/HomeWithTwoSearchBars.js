@@ -1,9 +1,9 @@
-// WITH SEARCH FUNCTIONALITY
 import React, { useState, useEffect } from 'react';
 import TextField from '@mui/material/TextField';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
+
 import BackToTop from './BackToTop';
 import './App.css';
 
@@ -12,12 +12,13 @@ import './App.css';
 
 // Search bar article: https://blog.logrocket.com/create-search-bar-react-from-scratch/
 
-const HomeWithSearch = () => {
+const HomeWithTwoSearchBars = () => {
   const [episode, setEpisodes] = useState([]);
   // const url = `https://the-twilight-zone-api.herokuapp.com/episodes`;
   const url = `https://the-twilight-zone-api.vercel.app/episodes`;
 
-  const [query, setQuery] = useState('');
+  const [query1, setQuery1] = useState('');
+  const [query2, setQuery2] = useState('');
 
   useEffect(() => {
     fetchEpisodes();
@@ -38,7 +39,6 @@ const HomeWithSearch = () => {
 
   return (
     <>
-      {/* <div style={{ padding: '20px 0' }}> */}
       <div style={{ padding: '2em' }}>
         <h1
           style={{
@@ -52,7 +52,7 @@ const HomeWithSearch = () => {
             Test page for{' '}
             <a
               href='https://thetwilightzoneapi.netlify.app/'
-              class='link'
+              className='link'
               rel='noopener noreferrer'
               target='_blank'
             >
@@ -63,18 +63,24 @@ const HomeWithSearch = () => {
         </div>
         <br />
 
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
-          {/* <input
-            placeholder='Search episodes'
-            onChange={(event) => setQuery(event.target.value)}
-          /> */}
+        <div style={{ display: 'flex', justifyContent: 'space-evenly' }}>
           <TextField
             sx={{
               width: '300px',
             }}
-            onChange={(event) => setQuery(event.target.value)}
+            onChange={(event) => setQuery1(event.target.value)}
             id='standard-basic'
             label='Search by episode'
+            variant='standard'
+          />
+
+          <TextField
+            sx={{
+              width: '300px',
+            }}
+            onChange={(event) => setQuery2(event.target.value)}
+            id='standard-basic'
+            label='Search by season'
             variant='standard'
           />
         </div>
@@ -83,15 +89,28 @@ const HomeWithSearch = () => {
         style={{
           backgroundColor: '#f4f4f4',
           display: 'flex',
-          justifyContent: 'space-evenly',
+          justifyContent: 'center',
           flexWrap: 'wrap',
         }}
       >
         {episode
           .filter((item) => {
-            if (query === '') {
+            if (query1 === '') {
               return item;
-            } else if (item.title.toLowerCase().includes(query.toLowerCase())) {
+            } else if (
+              item.title.toLowerCase().includes(query1.toLowerCase())
+            ) {
+              return item;
+            }
+            // If none of the if or else-if condition matches
+            return false;
+          })
+          .filter((item) => {
+            if (query2 === '') {
+              return item;
+            } else if (
+              item.season.toLowerCase().includes(query2.toLowerCase())
+            ) {
               return item;
             }
             // If none of the if or else-if condition matches
@@ -181,4 +200,4 @@ const HomeWithSearch = () => {
   );
 };
 
-export default HomeWithSearch;
+export default HomeWithTwoSearchBars;

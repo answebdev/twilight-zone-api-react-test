@@ -4,7 +4,7 @@ import './App.css';
 // CODE TO TEST IF DATA-RENDERING WORKS - ORIGINAL CODE BELOW (COMMENTED OUT)
 // Live test app: https://twilight-zone-api-react-test.netlify.app/
 
-const App = () => {
+const Home = () => {
   const [episode, setEpisodes] = useState([]);
   // const url = `https://the-twilight-zone-api.herokuapp.com/episodes`;
   const url = `https://the-twilight-zone-api.vercel.app/episodes`;
@@ -105,4 +105,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Home;

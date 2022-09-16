@@ -1,7 +1,8 @@
 import React from 'react';
 import Navbar from './Navbar';
 // import Home from './Home';
-import HomeWithSearch from './HomeWithSearch';
+// import HomeWithSearch from './HomeWithSearch';
+import HomeWithTwoSearchBars from './HomeWithTwoSearchBars';
 import './App.css';
 
 // Live test app: https://twilight-zone-api-react-test.netlify.app/
@@ -12,7 +13,8 @@ const App = () => {
     <div className='App'>
       <Navbar />
       {/* <Home /> */}
-      <HomeWithSearch />
+      {/* <HomeWithSearch /> */}
+      <HomeWithTwoSearchBars />
     </div>
   );
 };
