@@ -193,7 +193,7 @@ const HomeWithTwoSearchBars = () => {
           ))}
       </div>
       <div style={{ textAlign: 'center' }}>
-        {isLoading ? <span class='loader'></span> : null}
+        {isLoading ? <span className='loader'></span> : null}
       </div>
       <div
         style={{
