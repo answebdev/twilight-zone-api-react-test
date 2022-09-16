@@ -56,6 +56,7 @@ const HomeWithSearch = () => {
           <p style={{ textAlign: 'center', lineHeight: '1.6' }}>
             Test page for{' '}
             <a
+              style={{ textDecoration: 'none' }}
               href='https://thetwilightzoneapi.netlify.app/'
               class='link'
               rel='noopener noreferrer'
