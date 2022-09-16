@@ -404,7 +404,7 @@ const HomeWithTwoSearchBars = () => {
                             <strong>Details</strong>
                           </Typography>
                         </AccordionSummary>
-                        <AccordionDetails>
+                        <AccordionDetails sx={{ padding: '0' }}>
                           <div>
                             <p style={{ lineHeight: '1.5' }}>
                               <strong>Storyline: </strong>
