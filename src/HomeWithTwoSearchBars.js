@@ -3,7 +3,6 @@ import TextField from '@mui/material/TextField';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
-
 import BackToTop from './BackToTop';
 import './App.css';
 
@@ -17,10 +16,13 @@ const HomeWithTwoSearchBars = () => {
   // const url = `https://the-twilight-zone-api.herokuapp.com/episodes`;
   const url = `https://the-twilight-zone-api.vercel.app/episodes`;
 
+  const [isLoading, setIsLoading] = useState(false);
+
   const [query1, setQuery1] = useState('');
   const [query2, setQuery2] = useState('');
 
   useEffect(() => {
+    setIsLoading(true);
     fetchEpisodes();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -31,9 +33,11 @@ const HomeWithTwoSearchBars = () => {
       .then((data) => {
         setEpisodes(data);
         console.log(data);
+        setIsLoading(false);
       })
       .catch((error) => {
         console.error('Error:', error);
+        setIsLoading(false);
       });
   }
 
@@ -187,6 +191,9 @@ const HomeWithTwoSearchBars = () => {
               </Card>
             </div>
           ))}
+      </div>
+      <div style={{ textAlign: 'center' }}>
+        {isLoading ? <span class='loader'></span> : null}
       </div>
       <div
         style={{

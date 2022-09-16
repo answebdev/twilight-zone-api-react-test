@@ -17,9 +17,12 @@ const HomeWithSearch = () => {
   // const url = `https://the-twilight-zone-api.herokuapp.com/episodes`;
   const url = `https://the-twilight-zone-api.vercel.app/episodes`;
 
+  const [isLoading, setIsLoading] = useState(false);
+
   const [query, setQuery] = useState('');
 
   useEffect(() => {
+    setIsLoading(true);
     fetchEpisodes();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -30,9 +33,11 @@ const HomeWithSearch = () => {
       .then((data) => {
         setEpisodes(data);
         console.log(data);
+        setIsLoading(false);
       })
       .catch((error) => {
         console.error('Error:', error);
+        setIsLoading(false);
       });
   }
 
@@ -168,6 +173,9 @@ const HomeWithSearch = () => {
               </Card>
             </div>
           ))}
+      </div>
+      <div style={{ textAlign: 'center' }}>
+        {isLoading ? <span class='loader'></span> : null}
       </div>
       <div
         style={{
